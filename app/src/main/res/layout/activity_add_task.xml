@@ -7,6 +7,17 @@
     tools:context=".AddTaskActivity">
 
     <TextView
+        android:id="@+id/textView5"
+        android:layout_width="177dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="116dp"
+        android:text="Total tasks: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addNewTask" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="383dp"
         android:layout_height="30dp"
@@ -61,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button_addTask_activity_addTask"
+        android:id="@+id/addNewTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -70,13 +81,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskDescription" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="177dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="108dp"
-        android:text="Total tasks: 0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_addTask_activity_addTask" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,7 @@ MainActivity:
 ![Screenshot1](Screenshot1.png)
 
 
+
 AddTaskActivity:
 
 ![Screenshot2](Screenshot2.png)

@@ -10,14 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskmaster1">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".OneTaskActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".AddTaskActivity"
             android:exported="false"
-            android:parentActivityName=".AddTaskActivity" />
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AllTasksActivity"
             android:exported="false"
-            android:parentActivityName=".AllTasksActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

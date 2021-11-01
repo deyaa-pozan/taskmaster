@@ -13,7 +13,6 @@ public class AddTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
-
         Button toastShow = findViewById(R.id.addNewTask);
         toastShow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,6 +21,5 @@ public class AddTaskActivity extends AppCompatActivity {
                 punchToast.show();
             }
         });
-
     }
 }

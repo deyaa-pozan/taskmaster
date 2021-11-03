@@ -20,25 +20,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TaskDataBase db = TaskDataBase.getInstance(this);
+        TaskDao taskDao = db.taskDao();
+
+        List<Task> tasksDB = taskDao.getAll();
+
         Button addTask = findViewById(R.id.button_first);
         Button allTasks = findViewById(R.id.button_first2);
         Button settings = findViewById(R.id.settings);
-        String body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis massa, elementum a nibh sed, sodales posuere nunc. Vivamus eget ante malesuada, fermentum tellus eget, dignissim enim. Duis felis enim, facilisis in tortor eget, pellentesque tristique dolor. Nullam hendrerit ex at sagittis tincidunt. Cras in sodales mauris. Quisque lobortis nisl quis rhoncus accumsan. ";
         RecyclerView recyclerView = findViewById(R.id.RV_main);
-        List tasks = new ArrayList<>();
-        Task task1 = new Task("Clean room", body, State.NEW );
-        Task task2 = new Task("Study", body, State.NEW );
-        Task task3 = new Task("Eat", body, State.NEW );
-        Task task4 = new Task("Coding", body, State.NEW );
-        Task task5 = new Task("Eat", body, State.NEW );
-        Task task6 = new Task("Sleep", body, State.NEW );
-        tasks.add(task1);
-        tasks.add(task2);
-        tasks.add(task3);
-        tasks.add(task4);
-        tasks.add(task5);
-        tasks.add(task6);
-        TaskAdapter taskAdapter = new TaskAdapter(tasks, this);
+        TaskAdapter taskAdapter = new TaskAdapter(tasksDB, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.canScrollVertically();
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

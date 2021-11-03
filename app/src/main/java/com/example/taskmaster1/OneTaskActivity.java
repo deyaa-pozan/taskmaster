@@ -14,7 +14,7 @@ public class OneTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_one_task);
         Intent intent = getIntent();
         TextView text = findViewById(R.id.taskname);
-        String taskName = intent.getExtras().getString("task","null");
+        String taskName = intent.getExtras().getString("taskName","null");
         text.setText(taskName);
     }
 }

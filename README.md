@@ -65,5 +65,28 @@ MainActivity:
 ### _________________________________
 
 
+***Third day's changes (lab 27):***
+
+* update the home page (Main Activity) to be contains main title which hold the user name (which is set by user from the settings page) and RecyclerView which hold the list of tasks and view it as a list for the user, and one button for settings.
+* create a fragment to hold the style for each task..(title, body, state)
+* create taskAdapter for binding the data with the view(fragment styles)
+* connect them together and set onClick listener on each ViewHolder to response for user click and go on the task details page with the title of the tapped task
+
+*Screenshots:*
+
+MainActivity:
+
+![Screenshot1](./screens/Screenshot1-lab28.png)
+
+
+TaskDetailsActivity:
+
+![Screenshot2](./screens/Screenshot2-lab28.png)
+
+
+
+### _________________________________
+
+
 
 

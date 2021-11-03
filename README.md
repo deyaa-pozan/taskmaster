@@ -65,7 +65,7 @@ MainActivity:
 ### _________________________________
 
 
-***Third day's changes (lab 27):***
+***Third day's changes (lab 28):***
 
 * update the home page (Main Activity) to be contains main title which hold the user name (which is set by user from the settings page) and RecyclerView which hold the list of tasks and view it as a list for the user, and one button for settings.
 * create a fragment to hold the style for each task..(title, body, state)
@@ -76,12 +76,13 @@ MainActivity:
 
 MainActivity:
 
-![Screenshot1](./screens/Screenshot1-lab28.png)
+![Screenshot1](./screens/Screenshot1-lab28.jpg)
+
 
 
 TaskDetailsActivity:
 
-![Screenshot2](./screens/Screenshot2-lab28.png)
+![Screenshot2](./screens/Screenshot2-lab28.jpg)
 
 
 

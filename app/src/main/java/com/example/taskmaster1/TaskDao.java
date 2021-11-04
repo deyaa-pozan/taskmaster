@@ -10,21 +10,13 @@ import java.util.List;
 @Dao
 public interface TaskDao {
 
-    @Query("select * from tasks")
+    @Query("select * from task")
     List <Task> getAll();
 
-    @Query("select * from tasks where id = :id")
+    @Query("select * from task where id = :id")
     Task findTaskById(int id);
 
     @Insert
-    void insert(Task task);
+    Long insert(Task task);
 
-    @Insert
-    void insertAll(Task... tasks);
-
-    @Delete
-    int delete(Task task);
-
-    @Query("Delete from tasks where title = :title ")
-    int deleteTitle(String title);
 }

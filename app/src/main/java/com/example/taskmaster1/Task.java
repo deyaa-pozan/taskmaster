@@ -1,23 +1,36 @@
 package com.example.taskmaster1;
 
+
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "tasks")
+@Entity
 public class Task {
+
     @PrimaryKey(autoGenerate = true)
-    int id;
-    String title;
-    String body;
-    State state;
+    public Long id;
+
+
+    @ColumnInfo(name = "title")
+    public String title;
+
+    @ColumnInfo(name = "body")
+    public String body;
+
+    @ColumnInfo(name = "state")
+    public State state;
+
+    public Task() {
+
+    }
 
     public Task(String title, String body, State state) {
         this.title = title;
         this.body = body;
         this.state = state;
     }
-    public Task() {
-    }
+
     public String getTitle() {
         return title;
     }

@@ -10,41 +10,49 @@
         android:id="@+id/textView5"
         android:layout_width="177dp"
         android:layout_height="28dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="108dp"
         android:text="Total tasks: 0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addNewTask" />
+        app:layout_constraintTop_toBottomOf="@+id/addNewTask"
+        app:layout_constraintVertical_bias="0.514" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="383dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Add Task"
+        app:layout_constraintBottom_toTopOf="@+id/taskTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
 
     <EditText
         android:id="@+id/taskTitle"
-        android:layout_width="357dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="378dp"
+        android:layout_height="56dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="My Task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.083" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="80dp"
         android:text="Task Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,8 +61,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:text="Task Description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskTitle" />
@@ -63,11 +71,11 @@
         android:id="@+id/taskDescription"
         android:layout_width="376dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Do something"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -75,10 +83,10 @@
         android:id="@+id/addNewTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="84dp"
         android:text="Add Task"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskDescription" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskDescription"
+        app:layout_constraintVertical_bias="0.322"
+        tools:layout_editor_absoluteX="38dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

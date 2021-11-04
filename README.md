@@ -89,5 +89,34 @@ TaskDetailsActivity:
 ### _________________________________
 
 
+***Forth day's changes (lab 29):***
+
+* update the home page to be contains main title which hold the user name (which is set by user from the settings page) and RecyclerView which hold the list of tasks and view it as a list for the user, a button for settings, and a button for add a task.
+* Edit the TaskDetailsActivity to reflect the all data entered by the user (Title, Body, State), Not just the title.
+* create a Room DataBase which is local db that hold the user's data (task).
+* create the task entity and task DAO (Data Access Object) to let me manipulate the data in the DB (read, add, update, delete).
+* Edit in the mainActivity especially in the decleration of the Adapter .. to take the list of tasks from the DB (getAllTasks())
+
+*Screenshots:*
+
+AddTaskActivity
+
+![Screenshot3](./screens/Screenshot1-lab29.jpg)
+
+MainActivity:
+
+![Screenshot1](./screens/Screenshot2-lab29.jpg)
+
+
+TaskDetailsActivity:
+
+![Screenshot2](./screens/Screenshot3-lab29.jpg)
+
+
+
+
+
+
+
 
 

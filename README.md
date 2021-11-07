@@ -107,10 +107,11 @@ MainActivity:
 
 ![Screenshot1](./screens/Screenshot2-lab29.jpg)
 
-
 TaskDetailsActivity:
 
 ![Screenshot2](./screens/Screenshot3-lab29.jpg)
+
+
 
 
 

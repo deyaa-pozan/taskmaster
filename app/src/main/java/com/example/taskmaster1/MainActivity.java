@@ -40,20 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Button settings = findViewById(R.id.settings);
         String body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis massa, elementum a nibh sed, sodales posuere nunc. Vivamus eget ante malesuada, fermentum tellus eget, dignissim enim. Duis felis enim, facilisis in tortor eget, pellentesque tristique dolor. Nullam hendrerit ex at sagittis tincidunt. Cras in sodales mauris. Quisque lobortis nisl quis rhoncus accumsan. ";
         RecyclerView recyclerView = findViewById(R.id.RV_main);
-//        List tasks = new ArrayList<>();
-//        Task task1 = new Task("Clean room", body, State.NEW );
-//        Task task2 = new Task("Study", body, State.NEW );
-//        Task task3 = new Task("Eat", body, State.NEW );
-//        Task task4 = new Task("Coding", body, State.NEW );
-//        Task task5 = new Task("Eat", body, State.NEW );
-//        Task task6 = new Task("Sleep", body, State.NEW );
-//        tasks.add(task1);
-//        tasks.add(task2);
-//        tasks.add(task3);
-//        tasks.add(task4);
-//        tasks.add(task5);
-//        tasks.add(task6);
-//        List<Task> taskData = AppDatabase.getInstance(this).taskDao().getAll();
+
         List<Task> tasks = new ArrayList<>();
         tasks=GetData();
 
@@ -72,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goToAddTask);
             }
         });
+
+
+
 
         allTasks.setOnClickListener(new View.OnClickListener() {
             @Override

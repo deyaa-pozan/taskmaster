@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.amplifyframework.datastore.generated.model.Task;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,15 +49,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     @Override
     public void onBindViewHolder(@NonNull TaskAdapter.TaskViewHolder holder, int position) {
         Task task = tasks.get(position);
-        holder.titleT.setText(task.title);
-        holder.bodyT.setText(task.body);
-        holder.stateT.setText(task.state.toString());
-
+        holder.titleT.setText(task.getTitle());
+        holder.bodyT.setText(task.getBody());
+        holder.stateT.setText(task.getState().toString());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent taskDetailsIntent = new Intent(context, OneTaskActivity.class);
-                taskDetailsIntent.putExtra("taskName",task.title);
+                taskDetailsIntent.putExtra("taskName",task.getTitle());
                 context.startActivity(taskDetailsIntent);
             }
         });

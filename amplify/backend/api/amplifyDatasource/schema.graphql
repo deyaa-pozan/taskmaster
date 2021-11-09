@@ -1,10 +1,13 @@
 type Task @model {
   id: ID!
   title: String!
-  description: String
-  status: String
+  body: String
+  state: State!
 }
-type Note @model {
-  id: ID!
-  content: String!
+
+enum  State {
+  NEW
+  ASSIGNED
+  IN_PROCESS
+  COMPLETE
 }

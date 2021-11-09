@@ -22,12 +22,12 @@ import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 public final class Task implements Model {
   public static final QueryField ID = field("Task", "id");
   public static final QueryField TITLE = field("Task", "title");
-  public static final QueryField DESCRIPTION = field("Task", "description");
-  public static final QueryField STATUS = field("Task", "status");
+  public static final QueryField BODY = field("Task", "body");
+  public static final QueryField STATE = field("Task", "state");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="String", isRequired = true) String title;
-  private final @ModelField(targetType="String") String description;
-  private final @ModelField(targetType="String") String status;
+  private final @ModelField(targetType="String") String body;
+  private final @ModelField(targetType="State", isRequired = true) State state;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime createdAt;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime updatedAt;
   public String getId() {
@@ -38,12 +38,12 @@ public final class Task implements Model {
       return title;
   }
   
-  public String getDescription() {
-      return description;
+  public String getBody() {
+      return body;
   }
   
-  public String getStatus() {
-      return status;
+  public State getState() {
+      return state;
   }
   
   public Temporal.DateTime getCreatedAt() {
@@ -54,11 +54,11 @@ public final class Task implements Model {
       return updatedAt;
   }
   
-  private Task(String id, String title, String description, String status) {
+  private Task(String id, String title, String body, State state) {
     this.id = id;
     this.title = title;
-    this.description = description;
-    this.status = status;
+    this.body = body;
+    this.state = state;
   }
   
   @Override
@@ -71,8 +71,8 @@ public final class Task implements Model {
       Task task = (Task) obj;
       return ObjectsCompat.equals(getId(), task.getId()) &&
               ObjectsCompat.equals(getTitle(), task.getTitle()) &&
-              ObjectsCompat.equals(getDescription(), task.getDescription()) &&
-              ObjectsCompat.equals(getStatus(), task.getStatus()) &&
+              ObjectsCompat.equals(getBody(), task.getBody()) &&
+              ObjectsCompat.equals(getState(), task.getState()) &&
               ObjectsCompat.equals(getCreatedAt(), task.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), task.getUpdatedAt());
       }
@@ -83,8 +83,8 @@ public final class Task implements Model {
     return new StringBuilder()
       .append(getId())
       .append(getTitle())
-      .append(getDescription())
-      .append(getStatus())
+      .append(getBody())
+      .append(getState())
       .append(getCreatedAt())
       .append(getUpdatedAt())
       .toString()
@@ -97,8 +97,8 @@ public final class Task implements Model {
       .append("Task {")
       .append("id=" + String.valueOf(getId()) + ", ")
       .append("title=" + String.valueOf(getTitle()) + ", ")
-      .append("description=" + String.valueOf(getDescription()) + ", ")
-      .append("status=" + String.valueOf(getStatus()) + ", ")
+      .append("body=" + String.valueOf(getBody()) + ", ")
+      .append("state=" + String.valueOf(getState()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()))
       .append("}")
@@ -129,27 +129,31 @@ public final class Task implements Model {
   public CopyOfBuilder copyOfBuilder() {
     return new CopyOfBuilder(id,
       title,
-      description,
-      status);
+      body,
+      state);
   }
   public interface TitleStep {
-    BuildStep title(String title);
+    StateStep title(String title);
+  }
+  
+
+  public interface StateStep {
+    BuildStep state(State state);
   }
   
 
   public interface BuildStep {
     Task build();
     BuildStep id(String id);
-    BuildStep description(String description);
-    BuildStep status(String status);
+    BuildStep body(String body);
   }
   
 
-  public static class Builder implements TitleStep, BuildStep {
+  public static class Builder implements TitleStep, StateStep, BuildStep {
     private String id;
     private String title;
-    private String description;
-    private String status;
+    private State state;
+    private String body;
     @Override
      public Task build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -157,26 +161,27 @@ public final class Task implements Model {
         return new Task(
           id,
           title,
-          description,
-          status);
+          body,
+          state);
     }
     
     @Override
-     public BuildStep title(String title) {
+     public StateStep title(String title) {
         Objects.requireNonNull(title);
         this.title = title;
         return this;
     }
     
     @Override
-     public BuildStep description(String description) {
-        this.description = description;
+     public BuildStep state(State state) {
+        Objects.requireNonNull(state);
+        this.state = state;
         return this;
     }
     
     @Override
-     public BuildStep status(String status) {
-        this.status = status;
+     public BuildStep body(String body) {
+        this.body = body;
         return this;
     }
     
@@ -192,11 +197,11 @@ public final class Task implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, String title, String description, String status) {
+    private CopyOfBuilder(String id, String title, String body, State state) {
       super.id(id);
       super.title(title)
-        .description(description)
-        .status(status);
+        .state(state)
+        .body(body);
     }
     
     @Override
@@ -205,13 +210,13 @@ public final class Task implements Model {
     }
     
     @Override
-     public CopyOfBuilder description(String description) {
-      return (CopyOfBuilder) super.description(description);
+     public CopyOfBuilder state(State state) {
+      return (CopyOfBuilder) super.state(state);
     }
     
     @Override
-     public CopyOfBuilder status(String status) {
-      return (CopyOfBuilder) super.status(status);
+     public CopyOfBuilder body(String body) {
+      return (CopyOfBuilder) super.body(body);
     }
   }
   

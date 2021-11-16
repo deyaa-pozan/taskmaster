@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.827" />
+        app:layout_constraintVertical_bias="0.375" />
 
     <Button
         android:id="@+id/save"
@@ -29,5 +29,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="367dp"
+        android:layout_height="158dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441">
+
+        <RadioButton
+            android:id="@+id/radioButtonSet1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEAM1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSet2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEAM2" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSet3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEAM3" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

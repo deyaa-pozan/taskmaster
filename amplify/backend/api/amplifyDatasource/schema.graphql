@@ -1,6 +1,7 @@
-type Task @model {
+type Task @model @key(name: "byTeam", fields: ["teamID", "title"]){
   id: ID!
   title: String!
+  teamID: ID!
   body: String
   state: State!
 }
@@ -11,3 +12,11 @@ enum  State {
   IN_PROCESS
   COMPLETE
 }
+
+type Team @model {
+  id: ID!
+  name: String!
+  tasks: [Task] @connection(keyName: "byTeam", fields: ["id"])
+}
+
+

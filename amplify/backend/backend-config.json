@@ -1,20 +1,58 @@
 {
   "api": {
-    "amplifyDatasource": {
+    "taskmaster2": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "deyaa"
+              "apiKeyExpirationDays": 7,
+              "description": "0000"
             }
-          }
+          },
+          "additionalAuthenticationProviders": []
         }
       }
+    }
+  },
+  "auth": {
+    "cognito8b85edb5": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation",
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "PREFERRED_USERNAME"
+        ],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "mfaTypes": [],
+        "verificationMechanisms": []
+      }
+    }
+  },
+  "storage": {
+    "s3b14e8d06": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "notifications": {
+    "notifications": {
+      "service": "Pinpoint",
+      "channels": [
+        "FCM"
+      ]
+    }
+  },
+  "analytics": {
+    "notifications": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
